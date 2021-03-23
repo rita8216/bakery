@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+            crossorigin="anonymous"
+        />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+
+        <!-- 這個jquery才有支援捲動效果 -->
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script src="/1123-上課檔案/DebbyBread/js/lightbox.js"></script>
+        <link rel="stylesheet" href="/1123-上課檔案/DebbyBread/css/lightboxshow.css" />
+        <title>Document</title>
+
+        <script>
+            $(function () {
+                // $('nav h1').click(function(){
+
+                // 	$('body,html').animate({scrollTop:$('#banner').offset().top},800)
+                // })
+                // $('#b1').click(function(){
+
+                // 	$('body,html').animate({scrollTop:$('#product').offset().top},800)
+                // })
+                // $('#b2').click(function(){
+
+                // 	$('body,html').animate({scrollTop:$('#about').offset().top},800)
+                // })
+                // $('#b3').click(function(){
+
+                // 	$('body,html').animate({scrollTop:$('#cf').offset().top},800)
+                // })
+                // $('#b4').click(function(){
+
+                // 	$('body,html').animate({scrollTop:$('#contact').offset().top},800)
+                // })
+
+                var targetArray = ['#product', '#about', '#cf', '#contact'];
+                $('#b1,#b2,#b3,#b4').click(function () {
+                    var btnName = $(this).attr('id').charAt(1) - 1;
+                    $('body,html').animate({ scrollTop: $(targetArray[btnName]).offset().top }, 800);
+                });
+
+                var windowWidth = $(this).width();
+                if (windowWidth < 768) {
+                    $('#b1,#b2,#b3,#b4').click(function () {
+                        $('#menu').slideUp();
+                    });
+                    $('.navbar-toggler').click(function () {
+                        $('#menu').slideToggle();
+                    });
+                }
+            });
+        </script>
+        <style>
+            #pic1 {
+                background-image: url('images/bread1.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            #pic2 {
+                background-image: url('images/bread2.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            #pic3 {
+                background-image: url('images/bread3.jpg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            }
+            .pictitle {
+                text-shadow: 2px 2px 2px #333;
+            }
+            @media screen and (max-width: 575px) {
+                .pictitle {
+                    font-size: 2rem;
+                }
+            }
+            .navBg {
+                background-color: #555;
+                opacity: 0.5;
+                transition: all 0.5s;
+                font-family: webfont;
+            }
+            .navBg:hover {
+                opacity: 1;
+            }
+
+            @font-face {
+                src: url('font/Christmas\ Bell\ -\ Personal\ Use.otf');
+                font-family: webfont;
+            }
+            nav h1 {
+                font-family: webfont;
+            }
+            .picintro {
+                overflow: hidden;
+                height: 22.6%;
+            }
+            .picintro p {
+                position: relative;
+                top: -100px;
+                text-align: left;
+                color: #fff;
+                opacity: 0;
+                padding: 10px;
+                height: 0;
+                font-size: 9px;
+            }
+            .picintro:hover p {
+                opacity: 1;
+                transition: all 0.5s;
+            }
+
+            .picintro:hover img {
+                filter: brightness(0.2);
+                transition: all 0.5s;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm navbar-dark fixed-top navBg">
+            <h1 class="m-0">Debby Bread</h1>
+            <button class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+            <div id="menu" class="collapse navbar-collapse justify-content-end">
+                <ul class="navbar-nav m-0 p-0">
+                    <li class="nav-item" id="b1"><a href="#product" class="nav-link">最新產品</a></li>
+                    <li class="nav-item" id="b2"><a href="#about" class="nav-link">關於我們</a></li>
+                    <li class="nav-item" id="b3"><a href="#cf" class="nav-link">廣告影片</a></li>
+                    <li class="nav-item" id="b4"><a href="#contact" class="nav-link">聯絡資訊</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="contaner-fluid">
+            <div class="row bg-secondary vh-100" id="banner">
+                <div class="col p-0">
+                    <div class="carousel slide p-0" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div id="pic1" class="carousel-item active vh-100">
+                                <div class="carousel-caption vh-100 d-flex justify-content-center align-items-center">
+                                    <h1 class="pictitle">美味 可口 養生</h1>
+                                </div>
+                            </div>
+                            <div id="pic2" class="carousel-item vh-100">
+                                <div id="pic1" class="carousel-item active vh-100">
+                                    <div class="carousel-caption vh-100 d-flex justify-content-center align-items-center">
+                                        <h1 class="pictitle">美味 可口 養生</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="pic3" class="carousel-item vh-100">
+                                <div id="pic1" class="carousel-item active vh-100">
+                                    <div class="carousel-caption vh-100 d-flex justify-content-center align-items-center">
+                                        <h1 class="pictitle">美味 可口 養生</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row pt-5" id="product">
+                <div class="col-10 offset-1 col-sm-8 offset-sm-2 pt-5 mb-3"><h3 class="font-weight-bold border-bottom">新貨搶鮮報</h3></div>
+                <div class="col-10 offset-1 col-sm-2 offset-sm-2 mb-3">
+                    <a href="/1123-上課檔案/DebbyBread/images/bread4.jpg" data-lightbox="pic" title="-高營養蕎麥-"
+                        ><img src="images/bread4.jpg" class="img-fluid"
+                    /></a>
+                </div>
+                <div class="col-10 offset-1 offset-sm-0 col-sm-2 mb-3">
+                    <a href="/1123-上課檔案/DebbyBread/images/bread5.jpg" data-lightbox="pic" title="-蜂蜜吐司-"
+                        ><img src="images/bread5.jpg" class="img-fluid"
+                    /></a>
+                </div>
+                <div class="col-10 offset-1 offset-sm-0 col-sm-2 mb-3">
+                    <a href="/1123-上課檔案/DebbyBread/images/bread6.jpg" data-lightbox="pic" title="-芝麻牛角-"
+                        ><img src="images/bread6.jpg" class="img-fluid"
+                    /></a>
+                </div>
+                <div class="col-10 offset-1 offset-sm-0 col-sm-2 mb-3">
+                    <a href="/1123-上課檔案/DebbyBread/images/bread7.jpg" data-lightbox="pic" title="-椰子奶酥-"
+                        ><img src="images/bread7.jpg" class="img-fluid"
+                    /></a>
+                </div>
+                <div class="col-10 offset-1 offset-sm-0 col-sm-2 offset-sm-2 mb-3">
+                    <a href="/1123-上課檔案/DebbyBread/images/bread8.jpg" data-lightbox="pic" title="-馬卡龍肉鬆-"
+                        ><img src="images/bread8.jpg" class="img-fluid"
+                    /></a>
+                </div>
+                <div class="col-10 offset-1 offset-sm-0 col-sm-2 mb-3">
+                    <a href="/1123-上課檔案/DebbyBread/images/bread9.jpg" data-lightbox="pic" title="-白砂糖波蘿-"
+                        ><img src="images/bread9.jpg" class="img-fluid"
+                    /></a>
+                </div>
+                <div class="col-10 offset-1 offset-sm-0 col-sm-2 mb-3">
+                    <a href="/1123-上課檔案/DebbyBread/images/bread10.jpg" data-lightbox="pic" title="-千層夾心捲-"
+                        ><img src="images/bread10.jpg" class="img-fluid"
+                    /></a>
+                </div>
+                <div class="col-10 offset-1 offset-sm-0 col-sm-2 mb-3">
+                    <a href="/1123-上課檔案/DebbyBread/images/bread11.jpg" data-lightbox="pic" title="-葡萄椰子吐司-"
+                        ><img src="images/bread11.jpg" class="img-fluid"
+                    /></a>
+                </div>
+                <div class="col-10 offset-1 offset-sm-0 col-sm-2 offset-sm-2 mb-5">
+                    <a href="/1123-上課檔案/DebbyBread/images/bread12.jpg" data-lightbox="pic" title="-法國千層派-"
+                        ><img src="images/bread12.jpg" class="img-fluid"
+                    /></a>
+                </div>
+                <div class="col-10 offset-1 offset-sm-0 col-sm-2 mb-5">
+                    <a href="/1123-上課檔案/DebbyBread/images/bread13.jpg" data-lightbox="pic" title="-藍莓甜甜圈-"
+                        ><img src="images/bread13.jpg" class="img-fluid"
+                    /></a>
+                </div>
+                <div class="col-10 offset-1 offset-sm-0 col-sm-2 mb-5">
+                    <a href="/1123-上課檔案/DebbyBread/images/bread14.jpg" data-lightbox="pic" title="-柴木海鮮吐司-"
+                        ><img src="images/bread14.jpg" class="img-fluid"
+                    /></a>
+                </div>
+                <div class="col-10 offset-1 offset-sm-0 col-sm-2 mb-5">
+                    <a href="/1123-上課檔案/DebbyBread/images/bread15.jpg" data-lightbox="pic" title="-芥末吐司蛋糕-"
+                        ><img src="images/bread15.jpg" class="img-fluid"
+                    /></a>
+                </div>
+            </div>
+            <div class="row pt-5" id="about">
+                <div class="col-10 offset-1 col-sm-8 offset-sm-2 pt-5 my-3"><h3 class="font-weight-bold border-bottom">關於我們</h3></div>
+                <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-lg-4 offset-lg-2">
+                    <p class="">
+                        Debby麵包食品有限公司創立於民國105年。 ... 本公司擁有優秀的經營團隊，秉持著『Baking Excellence & Value
+                        Added』的經營理念，追求企業整體營運穩定及永續經營及成長。本公司擁有優秀的經營團隊，秉持著『Baking Excellence & Value
+                        Added』的經營理念，追求企業整體營運穩定及永續經營及成長。由於囊括歐式麵包烘焙技術，稟承中點製作技藝精華，產品相繼為國內五星級飯店及航空公司所選用。歷經半世紀的歲月變遷，烘焙技藝代代相傳，產品種類迭有創新。唯一不變的是：對每一份產品的用心及尊重。2018年Debby麵包將帶給大家全新的產品規劃與滿足大家味蕾的精緻糕餅點心，請大家拭目以待。
+                    </p>
+                </div>
+                <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-lg-4 offset-lg-0 text-center">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 picintro">
+                            <img src="/1123-上課檔案/DebbyBread/images/p1.jpg" class="img-fluid" alt="" />
+                            <p>
+                                路易 劉<br />
+                                營運長 & 創意主廚<br />
+                                全球收集多款新式創意麵包料理期待讓更多顧客可以喜歡Debby~
+                            </p>
+                        </div>
+                        <div class="col-12 col-sm-6 picintro">
+                            <img src="/1123-上課檔案/DebbyBread/images/p2.jpg" class="img-fluid" alt="" />
+                            <p>寶春 吳 <br />顧問主廚 <br />全球知名麵包料理達人!許多的麵包經由他的雙手被創造出來!</p>
+                        </div>
+                        <div class="col-12 col-sm-6 picintro">
+                            <img src="/1123-上課檔案/DebbyBread/images/p3.jpg" class="img-fluid" alt="" />
+                            <p>大海 江 <br />行銷店長 <br />目前的營運分店管理者 江董的貼心讓所有創業主更放心</p>
+                        </div>
+                        <div class="col-12 col-sm-6 picintro">
+                            <img src="/1123-上課檔案/DebbyBread/images/p4.jpg" class="img-fluid" alt="" />
+                            <p>
+                                美媛 王<br />
+                                展業店長<br />
+                                目前的營運計畫推手 未來將讓Debby麵包走向國際化
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="cf">
+                <div class="col-10 offset-1 col-sm-8 offset-sm-2 pt-2 my-2"><h3 class="font-weight-bold border-bottom">專業工法</h3></div>
+                <div class="col-10 offset-1 col-sm-8 offset-sm-2 pt-2 my-2">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video src="/1123-上課檔案/DebbyBread/media/total.mp4" autoplay loop muted class="embed-responsive-item"></video>
+                    </div>
+                </div>
+                <div class="col-10 offset-1 col-sm-8 offset-sm-2 pt-2 my-2">
+                    <p>
+                        做麵包，簡單來說，就是將少量能夠生成二氧化碳的酵母加入麵粉和水中混合。麵包師的雙手創造了一種結構，將酵母釋放氣體的能力與緊實而富有彈性的麵糰充分融合在一起。之後，便可利用高溫將這種結構定型——於是，一個個新鮮出爐的麵包便呈現在我們面前，令人垂涎欲滴。無論是哪種麵包，其化學變化的關鍵都是將長鏈分子變成晶格分子。很多食物都會涉及這樣的過程，利用水和脂肪等各種食材創造出誘人的味道和口感。具體到麵包，它所涉及的分子名為麥穀蛋白，這是小麥蛋白家族的一員，對於生成麵包的結構至關重要。
+                    </p>
+                </div>
+            </div>
+            <div class="row my-5" id="contact">
+                <div class="col-10 offset-1 col-sm-8 offset-sm-2 pt-2 my-2"><h3 class="font-weight-bold border-bottom">聯絡我們</h3></div>
+                <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-lg-4 offset-lg-2 pt-2 my-2">
+                    <form action="">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="請輸入真實姓名 必填" required />
+                        </div>
+                        <div class="form-group"><input type="tel" class="form-control" placeholder="請填入連絡電話 必填" required /></div>
+                        <div class="form-group">
+                            <textarea name="" id="" cols="30" rows="10" class="form-control" placeholder="請輸入留言內容" maxlength="200"></textarea>
+                        </div>
+                        <input type="submit" value="送出" class="btn btn-info" style="width: 100%;" />
+                    </form>
+                </div>
+                <div class="col-10 offset-1 col-sm-8 offset-sm-2 col-lg-4 offset-lg-0 pt-2 my-2">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1T8CJEpVP07eIv4en3ckt_MwLXY2hBhZQ" width="100%" height="410"></iframe>
+                </div>
+            </div>
+            <div class="row" id="footer">
+                <div class="col m-0 jumbotron jumbotron-fluid bg-dark text-center text-white">Debby Bread-專業麵包烘培&copy;-2020</div>
+            </div>
+        </div>
+
+        <!-- 	  <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"
+        ></script> -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
